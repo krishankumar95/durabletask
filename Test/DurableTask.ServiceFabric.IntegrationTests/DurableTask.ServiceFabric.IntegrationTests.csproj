@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net48;net10.0</TargetFrameworks>
+    <RootNamespace>DurableTask.ServiceFabric.IntegrationTests</RootNamespace>
+    <AssemblyName>DurableTask.ServiceFabric.IntegrationTests</AssemblyName>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\src\DurableTask.ServiceFabric\sign.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSTest.TestAdapter" Version="3.8.3" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.8.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+  </ItemGroup>
+
+  <!-- SF Remoting client — needed to call the deployed TestStatefulService -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <PackageReference Include="Microsoft.ServiceFabric.Services.Remoting" Version="2.5.216" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <PackageReference Include="Microsoft.ServiceFabric.Services.Remoting" Version="7.0.1816" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DurableTask.Framework\DurableTask.Framework.csproj" />
+    <ProjectReference Include="..\..\src\DurableTask.ServiceFabric\DurableTask.ServiceFabric.csproj" />
+  </ItemGroup>
+</Project>
