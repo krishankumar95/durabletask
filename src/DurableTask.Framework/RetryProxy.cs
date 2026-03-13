@@ -19,8 +19,9 @@ namespace DurableTask
     using System.Linq;
     using System.Reflection;
     using System.Threading.Tasks;
+#if NETFRAMEWORK
     using ImpromptuInterface;
-
+#endif
     internal class RetryProxy<T> : DynamicObject
     {
         readonly OrchestrationContext context;
@@ -84,7 +85,16 @@ namespace DurableTask
 
         public async Task<ReturnType> InvokeWithRetry<ReturnType>(string methodName, object[] args)
         {
+#if NETFRAMEWORK
             Func<Task<ReturnType>> retryCall = () => { return Impromptu.InvokeMember(wrappedObject, methodName, args); };
+#else
+            Func<Task<ReturnType>> retryCall = () =>
+            {
+                return (Task<ReturnType>)wrappedObject.GetType()
+                    .GetMethod(methodName)
+                    .Invoke(wrappedObject, args);
+            };
+#endif
             var retryInterceptor = new RetryInterceptor<ReturnType>(context, retryOptions, retryCall);
 
             return await retryInterceptor.Invoke();

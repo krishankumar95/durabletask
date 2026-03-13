@@ -13,7 +13,11 @@
 
 namespace DurableTask.ServiceFabric
 {
+#if NET10_0_OR_GREATER
+    using System.Diagnostics.Tracing;
+#else
     using Microsoft.Diagnostics.Tracing;
+#endif
     using System.Threading.Tasks;
     using System;
 
