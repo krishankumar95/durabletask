@@ -45,3 +45,6 @@ Icon?
 ehthumbs.db
 Thumbs.db
 *.nupkg
+
+.vs/
+UpgradeLog.htm

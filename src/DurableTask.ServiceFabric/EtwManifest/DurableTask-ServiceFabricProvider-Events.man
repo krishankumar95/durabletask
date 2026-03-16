@@ -1,0 +1,142 @@
+<instrumentationManifest xmlns="http://schemas.microsoft.com/win/2004/08/events">
+ <instrumentation xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events">
+  <events xmlns="http://schemas.microsoft.com/win/2004/08/events">
+<provider name="DurableTask-ServiceFabricProvider" guid="{07511dce-ad98-5092-51ed-ef9ee009d69f}" resourceFileName="D:\git\durabletask-master\master\src\DurableTask.ServiceFabric\bin\Release\DurableTask.ServiceFabric.DurableTask-ServiceFabricProvider.etwManifest.dll" messageFileName="D:\git\durabletask-master\master\src\DurableTask.ServiceFabric\bin\Release\DurableTask.ServiceFabric.DurableTask-ServiceFabricProvider.etwManifest.dll" symbol="DurableTaskServiceFabricProvider">
+ <channels>
+  <channel chid="Operational" name="DurableTask-ServiceFabricProvider/Operational" value="17" type="Operational" enabled="true"/>
+  <channel chid="Debug" name="DurableTask-ServiceFabricProvider/Debug" value="19" type="Debug" enabled="false"/>
+  <channel chid="Analytic" name="DurableTask-ServiceFabricProvider/Analytic" value="18" type="Analytic" enabled="false"/>
+ </channels>
+ <tasks>
+  <task name="ExceptionInReliableCollectionOperations" message="$(string.task_ExceptionInReliableCollectionOperations)" value="64032"/>
+  <task name="UnexpectedCodeCondition" message="$(string.task_UnexpectedCodeCondition)" value="64033"/>
+  <task name="RetryableFabricException" message="$(string.task_RetryableFabricException)" value="64532"/>
+  <task name="ExceptionWhileRunningBackgroundJob" message="$(string.task_ExceptionWhileRunningBackgroundJob)" value="64533"/>
+  <task name="LogSizeMeasure" message="$(string.task_LogSizeMeasure)" value="65031"/>
+  <task name="LogMeasurement" message="$(string.task_LogMeasurement)" value="65032"/>
+  <task name="TraceMessage" message="$(string.task_TraceMessage)" value="65033"/>
+  <task name="ReliableStateManagement" message="$(string.task_ReliableStateManagement)" value="65525"/>
+  <task name="LogTimeTaken" message="$(string.task_LogTimeTaken)" value="65526"/>
+  <task name="LogStoreCount" message="$(string.task_LogStoreCount)" value="65530"/>
+  <task name="OrchestrationFinished" message="$(string.task_OrchestrationFinished)" value="65532"/>
+  <task name="OrchestrationCreated" message="$(string.task_OrchestrationCreated)" value="65533"/>
+  <task name="EventSourceMessage" message="$(string.task_EventSourceMessage)" value="65534"/>
+ </tasks>
+ <opcodes>
+ </opcodes>
+ <keywords>
+  <keyword name="Session3" message="$(string.keyword_Session3)" mask="0x100000000000"/>
+  <keyword name="Session2" message="$(string.keyword_Session2)" mask="0x200000000000"/>
+  <keyword name="Session1" message="$(string.keyword_Session1)" mask="0x400000000000"/>
+  <keyword name="Session0" message="$(string.keyword_Session0)" mask="0x800000000000"/>
+ </keywords>
+ <events>
+  <event value="0" version="0" level="win:LogAlways" symbol="EventSourceMessage" task="EventSourceMessage" template="EventSourceMessageArgs"/>
+  <event value="1" version="0" level="win:Informational" symbol="OrchestrationCreated" message="$(string.event_OrchestrationCreated)" task="OrchestrationCreated" channel="Operational" template="OrchestrationCreatedArgs"/>
+  <event value="2" version="0" level="win:Informational" symbol="OrchestrationFinished" message="$(string.event_OrchestrationFinished)" task="OrchestrationFinished" channel="Operational" template="OrchestrationFinishedArgs"/>
+  <event value="4" version="0" level="win:Informational" symbol="LogStoreCount" message="$(string.event_LogStoreCount)" task="LogStoreCount" channel="Operational" template="LogStoreCountArgs"/>
+  <event value="8" version="0" level="win:Informational" symbol="LogTimeTaken" message="$(string.event_LogTimeTaken)" task="LogTimeTaken" channel="Operational" template="LogTimeTakenArgs"/>
+  <event value="9" version="0" level="win:Informational" symbol="ReliableStateManagement" message="$(string.event_ReliableStateManagement)" task="ReliableStateManagement" channel="Operational" template="ReliableStateManagementArgs"/>
+  <event value="1001" version="0" level="win:Warning" symbol="ExceptionWhileRunningBackgroundJob" message="$(string.event_ExceptionWhileRunningBackgroundJob)" task="ExceptionWhileRunningBackgroundJob" channel="Operational" template="ExceptionWhileRunningBackgroundJobArgs"/>
+  <event value="1002" version="0" level="win:Warning" symbol="RetryableFabricException" message="$(string.event_RetryableFabricException)" task="RetryableFabricException" channel="Operational" template="RetryableFabricExceptionArgs"/>
+  <event value="1501" version="0" level="win:Error" symbol="UnexpectedCodeCondition" message="$(string.event_UnexpectedCodeCondition)" task="UnexpectedCodeCondition" channel="Operational" template="UnexpectedCodeConditionArgs"/>
+  <event value="1502" version="0" level="win:Error" symbol="ExceptionInReliableCollectionOperations" message="$(string.event_ExceptionInReliableCollectionOperations)" task="ExceptionInReliableCollectionOperations" channel="Operational" template="ExceptionInReliableCollectionOperationsArgs"/>
+  <event value="501" version="0" level="win:Verbose" symbol="TraceMessage" message="$(string.event_TraceMessage)" task="TraceMessage" channel="Debug" template="TraceMessageArgs"/>
+  <event value="502" version="0" level="win:Verbose" symbol="LogMeasurement" message="$(string.event_LogMeasurement)" task="LogMeasurement" channel="Analytic" template="LogMeasurementArgs"/>
+  <event value="503" version="0" level="win:Verbose" symbol="LogSizeMeasure" message="$(string.event_LogSizeMeasure)" task="LogSizeMeasure" channel="Analytic" template="LogSizeMeasureArgs"/>
+ </events>
+ <templates>
+  <template tid="EventSourceMessageArgs">
+   <data name="message" inType="win:UnicodeString"/>
+  </template>
+  <template tid="OrchestrationCreatedArgs">
+   <data name="instanceId" inType="win:UnicodeString"/>
+   <data name="executionId" inType="win:UnicodeString"/>
+  </template>
+  <template tid="OrchestrationFinishedArgs">
+   <data name="instanceId" inType="win:UnicodeString"/>
+   <data name="terminalStatus" inType="win:UnicodeString"/>
+   <data name="runningTimeInSeconds" inType="win:Double"/>
+   <data name="result" inType="win:UnicodeString"/>
+   <data name="executionId" inType="win:UnicodeString"/>
+  </template>
+  <template tid="LogStoreCountArgs">
+   <data name="storeName" inType="win:UnicodeString"/>
+   <data name="count" inType="win:Int64"/>
+  </template>
+  <template tid="LogTimeTakenArgs">
+   <data name="uniqueActionIdentifier" inType="win:UnicodeString"/>
+   <data name="elapsedMilliseconds" inType="win:Double"/>
+  </template>
+  <template tid="ReliableStateManagementArgs">
+   <data name="operationIdentifier" inType="win:UnicodeString"/>
+   <data name="operationData" inType="win:UnicodeString"/>
+  </template>
+  <template tid="ExceptionWhileRunningBackgroundJobArgs">
+   <data name="operationIdentifier" inType="win:UnicodeString"/>
+   <data name="exception" inType="win:UnicodeString"/>
+  </template>
+  <template tid="RetryableFabricExceptionArgs">
+   <data name="uniqueIdentifier" inType="win:UnicodeString"/>
+   <data name="attemptNumber" inType="win:Int32"/>
+   <data name="exception" inType="win:UnicodeString"/>
+  </template>
+  <template tid="UnexpectedCodeConditionArgs">
+   <data name="uniqueMessage" inType="win:UnicodeString"/>
+  </template>
+  <template tid="ExceptionInReliableCollectionOperationsArgs">
+   <data name="uniqueIdentifier" inType="win:UnicodeString"/>
+   <data name="exception" inType="win:UnicodeString"/>
+  </template>
+  <template tid="TraceMessageArgs">
+   <data name="instanceId" inType="win:UnicodeString"/>
+   <data name="message" inType="win:UnicodeString"/>
+  </template>
+  <template tid="LogMeasurementArgs">
+   <data name="uniqueActionIdentifier" inType="win:UnicodeString"/>
+   <data name="elapsedMilliseconds" inType="win:Int64"/>
+  </template>
+  <template tid="LogSizeMeasureArgs">
+   <data name="uniqueObjectIdentifier" inType="win:UnicodeString"/>
+   <data name="sizeInBytes" inType="win:Int64"/>
+  </template>
+ </templates>
+</provider>
+</events>
+</instrumentation>
+<localization>
+ <resources culture="en-US">
+  <stringTable>
+   <string id="event_ExceptionInReliableCollectionOperations" value="Hint : %1, Exception: %2"/>
+   <string id="event_ExceptionWhileRunningBackgroundJob" value="Exception in the background job %1 : %2"/>
+   <string id="event_LogMeasurement" value="Time taken for %1 : %2 milli seconds."/>
+   <string id="event_LogSizeMeasure" value="Size of %1 : %2 bytes."/>
+   <string id="event_LogStoreCount" value="Current number of entries in store %1 : %2"/>
+   <string id="event_LogTimeTaken" value="Time taken for %1 : %2 milli seconds."/>
+   <string id="event_OrchestrationCreated" value="Orchestration with instanceId : &apos;%1&apos; and executionId : &apos;%2&apos; is Created."/>
+   <string id="event_OrchestrationFinished" value="Orchestration with instanceId : &apos;%1&apos; and executionId : &apos;%5&apos; Finished with the status %2 and result %4 in %3 seconds."/>
+   <string id="event_ReliableStateManagement" value="%1 : %2"/>
+   <string id="event_RetryableFabricException" value="Hint : %1, AttemptNumber : %2, Exception: %3"/>
+   <string id="event_TraceMessage" value="Trace Message for Session %1 : %2"/>
+   <string id="event_UnexpectedCodeCondition" value="We are seeing something that we don&apos;t expect to see : %1"/>
+   <string id="keyword_Session0" value="Session0"/>
+   <string id="keyword_Session1" value="Session1"/>
+   <string id="keyword_Session2" value="Session2"/>
+   <string id="keyword_Session3" value="Session3"/>
+   <string id="task_EventSourceMessage" value="EventSourceMessage"/>
+   <string id="task_ExceptionInReliableCollectionOperations" value="ExceptionInReliableCollectionOperations"/>
+   <string id="task_ExceptionWhileRunningBackgroundJob" value="ExceptionWhileRunningBackgroundJob"/>
+   <string id="task_LogMeasurement" value="LogMeasurement"/>
+   <string id="task_LogSizeMeasure" value="LogSizeMeasure"/>
+   <string id="task_LogStoreCount" value="LogStoreCount"/>
+   <string id="task_LogTimeTaken" value="LogTimeTaken"/>
+   <string id="task_OrchestrationCreated" value="OrchestrationCreated"/>
+   <string id="task_OrchestrationFinished" value="OrchestrationFinished"/>
+   <string id="task_ReliableStateManagement" value="ReliableStateManagement"/>
+   <string id="task_RetryableFabricException" value="RetryableFabricException"/>
+   <string id="task_TraceMessage" value="TraceMessage"/>
+   <string id="task_UnexpectedCodeCondition" value="UnexpectedCodeCondition"/>
+  </stringTable>
+ </resources>
+</localization>
+</instrumentationManifest>
