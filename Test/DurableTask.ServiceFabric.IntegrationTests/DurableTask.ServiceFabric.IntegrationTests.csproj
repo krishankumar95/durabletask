@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net48;net10.0</TargetFrameworks>
-    <RootNamespace>DurableTask.ServiceFabric.UnitTests</RootNamespace>
-    <AssemblyName>DurableTask.ServiceFabric.UnitTests</AssemblyName>
+    <RootNamespace>DurableTask.ServiceFabric.IntegrationTests</RootNamespace>
+    <AssemblyName>DurableTask.ServiceFabric.IntegrationTests</AssemblyName>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
     <SignAssembly>true</SignAssembly>
@@ -15,24 +15,18 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
   </ItemGroup>
 
-  <!-- .NET Framework -->
+  <!-- SF Remoting client — needed to call the deployed TestStatefulService -->
   <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
-    <PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
+    <PackageReference Include="Microsoft.ServiceFabric.Services.Remoting" Version="2.5.216" />
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
 
-  <!-- .NET 10 -->
   <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
-    <PackageReference Include="System.Collections.Immutable" Version="1.7.1" />
+    <PackageReference Include="Microsoft.ServiceFabric.Services.Remoting" Version="7.0.1816" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\DurableTask.Framework\DurableTask.Framework.csproj" />
     <ProjectReference Include="..\..\src\DurableTask.ServiceFabric\DurableTask.ServiceFabric.csproj" />
-  </ItemGroup>
-
-  <!-- Golden serialization data from charlie9 for cross-TFM compatibility tests -->
-  <ItemGroup>
-    <None Include="GoldenData\*.bin" CopyToOutputDirectory="PreserveNewest" LinkBase="GoldenData" />
   </ItemGroup>
 </Project>
