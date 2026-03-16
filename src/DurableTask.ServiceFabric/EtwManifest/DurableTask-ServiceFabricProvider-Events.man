@@ -1,7 +1,7 @@
 <instrumentationManifest xmlns="http://schemas.microsoft.com/win/2004/08/events">
  <instrumentation xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events">
   <events xmlns="http://schemas.microsoft.com/win/2004/08/events">
-<provider name="DurableTask-ServiceFabricProvider" guid="{07511dce-ad98-5092-51ed-ef9ee009d69f}" resourceFileName="D:\git\durabletask-master\master\src\DurableTask.ServiceFabric\bin\Release\DurableTask.ServiceFabric.DurableTask-ServiceFabricProvider.etwManifest.dll" messageFileName="D:\git\durabletask-master\master\src\DurableTask.ServiceFabric\bin\Release\DurableTask.ServiceFabric.DurableTask-ServiceFabricProvider.etwManifest.dll" symbol="DurableTaskServiceFabricProvider">
+<provider name="DurableTask-ServiceFabricProvider" guid="{07511dce-ad98-5092-51ed-ef9ee009d69f}" resourceFileName="DurableTask-ServiceFabricProvider-Events.dll" messageFileName="DurableTask-ServiceFabricProvider-Events.dll" symbol="DurableTaskServiceFabricProvider">
  <channels>
   <channel chid="Operational" name="DurableTask-ServiceFabricProvider/Operational" value="17" type="Operational" enabled="true"/>
   <channel chid="Debug" name="DurableTask-ServiceFabricProvider/Debug" value="19" type="Debug" enabled="false"/>
