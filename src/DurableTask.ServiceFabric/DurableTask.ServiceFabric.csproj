@@ -10,7 +10,7 @@
 
     <!-- NuGet package metadata -->
     <PackageId>ServiceBus.DurableTask.ServiceFabric</PackageId>
-    <Version>1.0.1-delta1</Version>
+    <Version>1.0.1-delta2</Version>
     <Title>ServiceBus.DurableTask.ServiceFabric</Title>
     <Authors>pradeek;shsama</Authors>
     <Description>Service fabric based storage provider for Durable Task Framework.
@@ -39,5 +39,10 @@ This package was generated from vnext_servicefabric branch and is for private us
 
   <ItemGroup>
     <ProjectReference Include="..\DurableTask.Framework\DurableTask.Framework.csproj" />
+  </ItemGroup>
+
+  <!-- ETW manifest files — included in NuGet package under EtwManifest/ -->
+  <ItemGroup>
+    <None Include="EtwManifest\**" Pack="true" PackagePath="EtwManifest" />
   </ItemGroup>
 </Project>

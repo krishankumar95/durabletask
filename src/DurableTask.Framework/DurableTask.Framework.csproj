@@ -13,7 +13,7 @@
 
     <!-- NuGet package metadata -->
     <PackageId>ServiceBus.DurableTask</PackageId>
-    <Version>1.0.1-delta1</Version>
+    <Version>1.0.1-delta2</Version>
     <Title>Durable Task Framework</Title>
     <Authors>affandar;siport;shsama</Authors>
     <Description>This package provides a C# based durable Task framework for writing long running applications.
