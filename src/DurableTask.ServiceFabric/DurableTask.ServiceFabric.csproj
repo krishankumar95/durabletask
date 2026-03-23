@@ -10,7 +10,7 @@
 
     <!-- NuGet package metadata -->
     <PackageId>ServiceBus.DurableTask.ServiceFabric</PackageId>
-    <Version>1.0.1-echo4</Version>
+    <Version>1.0.1-echo5</Version>
     <Title>ServiceBus.DurableTask.ServiceFabric</Title>
     <Authors>pradeek;shsama</Authors>
     <Description>Service fabric based storage provider for Durable Task Framework.
