@@ -44,3 +44,7 @@ sign.snk
 Icon?
 ehthumbs.db
 Thumbs.db
+.vs/
+UpgradeLog.htm
+build_output/
+*.nupkg
