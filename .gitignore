@@ -43,4 +43,7 @@ sign.snk
 .Trashes
 Icon?
 ehthumbs.db
-Thumbs.db
+Thumbs.db.vs/
+build_output/
+*.nupkg
+UpgradeLog.htm
