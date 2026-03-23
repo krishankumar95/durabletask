@@ -7,6 +7,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>sign.snk</AssemblyOriginatorKeyFile>
+    <PackageId>ServiceBus.DurableTask</PackageId>
   </PropertyGroup>
 
   <!-- 6 files on disk that were not in the original legacy compile list -->
