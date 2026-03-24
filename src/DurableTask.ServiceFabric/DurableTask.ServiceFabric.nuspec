@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>ServiceBus.DurableTask.ServiceFabric</id>
-    <version>1.0.1-charlie10</version>
+    <version>1.0.1-echo5</version>
     <title>ServiceBus.DurableTask.ServiceFabric</title>
     <authors>pradeek;shsama</authors>
     <owners>pradeek;shsama</owners>
@@ -14,22 +14,30 @@ This package was generated from vnext_servicefabric branch and is for private us
     <copyright>Copyright © 2016</copyright>
     <tags>ServiceFabric Azure Task Durable Orchestration Workflow Activity Reliable</tags>
     <dependencies>
-      <group targetFramework="net451">
-        <dependency id="ServiceBus.DurableTask" version="1.0.1-charlie10" />
-        <dependency id="Microsoft.ServiceFabric" version="5.1.163" />
-        <dependency id="Microsoft.ServiceFabric.Data" version="2.1.163" />
-        <dependency id="Microsoft.ServiceFabric.Services" version="2.1.163" />
+      <group targetFramework="net48">
+        <dependency id="ServiceBus.DurableTask" version="1.0.1-echo5" />
+        <dependency id="Microsoft.ServiceFabric.Data" version="2.5.216" />
+        <dependency id="Microsoft.ServiceFabric.Services" version="2.5.216" />
         <dependency id="Newtonsoft.Json" version="8.0.3" />
         <dependency id="System.Collections.Immutable" version="1.2.0" />
         <dependency id="Microsoft.Diagnostics.Tracing.EventSource.Redist" version="1.1.28" />
       </group>
+      <group targetFramework="net10.0">
+        <dependency id="ServiceBus.DurableTask" version="1.0.1-echo5" />
+        <dependency id="Microsoft.ServiceFabric.Services" version="6.0.1004" />
+        <dependency id="Newtonsoft.Json" version="13.0.3" />
+        <dependency id="System.Collections.Immutable" version="1.7.1" />
+      </group>
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\DurableTask.ServiceFabric.dll" target="lib\net451\DurableTask.ServiceFabric.dll" />
-    <file src="bin\Release\DurableTask.ServiceFabric.pdb" target="lib\net451\DurableTask.ServiceFabric.pdb" />
-    <file src="bin\Release\DurableTask.ServiceFabric.xml" target="lib\net451\DurableTask.ServiceFabric.xml" />
-    <file src="bin\Release\DurableTask.ServiceFabric.DurableTask-ServiceFabricProvider.etwManifest.man" target="EtwManifest\DurableTask-ServiceFabricProvider-Events.man" />
-    <file src="bin\Release\DurableTask.ServiceFabric.DurableTask-ServiceFabricProvider.etwManifest.dll" target="EtwManifest\DurableTask-ServiceFabricProvider-Events.dll" />
+    <file src="bin\Release\net48\DurableTask.ServiceFabric.dll" target="lib\net48\DurableTask.ServiceFabric.dll" />
+    <file src="bin\Release\net48\DurableTask.ServiceFabric.pdb" target="lib\net48\DurableTask.ServiceFabric.pdb" />
+    <file src="bin\Release\net48\DurableTask.ServiceFabric.xml" target="lib\net48\DurableTask.ServiceFabric.xml" />
+    <file src="bin\Release\net10.0\DurableTask.ServiceFabric.dll" target="lib\net10.0\DurableTask.ServiceFabric.dll" />
+    <file src="bin\Release\net10.0\DurableTask.ServiceFabric.pdb" target="lib\net10.0\DurableTask.ServiceFabric.pdb" />
+    <file src="bin\Release\net10.0\DurableTask.ServiceFabric.xml" target="lib\net10.0\DurableTask.ServiceFabric.xml" />
+    <file src="EtwManifest\DurableTask-ServiceFabricProvider-Events.man" target="EtwManifest\DurableTask-ServiceFabricProvider-Events.man" />
+    <file src="EtwManifest\DurableTask-ServiceFabricProvider-Events.dll" target="EtwManifest\DurableTask-ServiceFabricProvider-Events.dll" />
   </files>
 </package>
